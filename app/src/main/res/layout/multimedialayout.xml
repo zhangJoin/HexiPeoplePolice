@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/inputItemBackground"
+    android:paddingTop="5dp"
+    android:paddingLeft="15dp"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:gravity="center_vertical"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/multiMedia_image"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/mult_image" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传图片"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/multiMedia_video"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        >
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/multi_video"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传视频"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/multiMedia_voice"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        >
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/multi_voice"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传音频"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#eaeaea"
+        />
+
+<com.xiante.jingwu.qingbao.CustomView.MultiMediaGridView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mediaImageDisplay"
+    ></com.xiante.jingwu.qingbao.CustomView.MultiMediaGridView>
+
+    <com.xiante.jingwu.qingbao.CustomView.SelectVideoView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="80dp"
+    android:maxHeight="80dp"
+    android:id="@+id/mediaVideoDisplay"
+        android:visibility="gone"
+    />
+
+<com.xiante.jingwu.qingbao.CustomView.MultiMediaVoiceView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="80dp"
+    android:maxHeight="80dp"
+    android:id="@+id/mediaVoiceDisplay"
+    android:layout_marginTop="5dp"
+    android:visibility="gone"
+    android:layout_marginBottom="5dp"
+    />
+</LinearLayout>

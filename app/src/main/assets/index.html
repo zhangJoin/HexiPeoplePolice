@@ -1,0 +1,37 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <meta charset="utf-8">
+      <title>Carson_Ho</title>
+       <h1>测试androidjs交互</h1>
+       <img src="url" alt="some_text" onclick="openalbum()"/>
+        <div id="imagecontainer" ></div>
+       <script>
+   function callJS(msg){
+      alert(msg);
+   }
+   function openalbum(){
+        WebViewJavascriptBridge.callHandler(
+        'submitFromWeb'
+        ,"how to image"
+        , function(responseData) {
+            document.getElementById("imagecontainer").innerHTML = "send get responseData from java, data = " + responseData
+        }
+    );
+   }
+
+   function updateImage(imglist){
+     var divele=document.getElementById("imagecontainer");
+     var  imgobj = JSON.parse(imglist);
+     for(var i=0;i<imgobj.length;i++){
+      var img=document.createElement("img");
+      img.setAttribute("src",imgobj[i]);
+      divele.appendChild(img);
+     }
+   }
+</script>
+   </head>
+
+</html>

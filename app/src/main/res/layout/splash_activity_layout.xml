@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff"
+    >
+<android.support.v4.view.ViewPager
+    android:id="@+id/splashViewpager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</android.support.v4.view.ViewPager>
+
+    <TextView
+        android:id="@+id/startupTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="立即体验"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/send_power"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:visibility="gone"
+        android:gravity="center"/>
+
+<com.example.myindicator.CircleIndicator
+    android:id="@+id/circleIndicator"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="10dp"
+
+    />
+</FrameLayout>

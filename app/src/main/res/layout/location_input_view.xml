@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center_vertical"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/inputNameTextsize"
+            android:padding="10dp"
+            android:text="姓名"
+            android:textColor="@color/inputViewNamecolor"
+            android:id="@+id/inputNameTV"
+            />
+
+        <EditText
+            android:id="@+id/inputValueET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/inputEditTextsize"
+            android:layout_weight="1"
+            android:background="@color/inputItemBackground"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            />
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/go_location"
+            android:layout_marginRight="10dp"
+            android:id="@+id/go_selectLocationView"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#eaeaea"
+        />
+</LinearLayout>

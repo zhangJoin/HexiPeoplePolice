@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_shape"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_search_member"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableStart="@drawable/search_history"
+                android:drawablePadding="5dp"
+                android:hint="@string/hintsearch"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/textnormalcolor"
+                android:textColorHint="@color/texthintcolor"
+                android:textSize="@dimen/textnormal" />
+
+            <ImageView
+                android:id="@+id/iv_search_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normalmargin"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                android:src="@drawable/edit_delete" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_search_member_cancel"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/cancel"
+            android:textColor="@color/textBlue"
+            android:textSize="@dimen/textnormal" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_search_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/normalmargin"
+        android:paddingEnd="@dimen/normalmargin"
+        android:scrollbars="none" />
+
+    <ListView
+        android:id="@+id/lv_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:scrollbars="none"
+        android:paddingStart="@dimen/normalmargin"
+        android:paddingEnd="@dimen/normalmargin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_search_member"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="-暂无历史纪录-"
+        android:textColor="@color/textnormalcolor" />
+</LinearLayout>

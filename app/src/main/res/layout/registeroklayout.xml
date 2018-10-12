@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <include layout="@layout/titlebar_top_layout"/>
+    <ImageView
+        android:id="@+id/iv_register"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/l00_login_logo"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@null"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/welcomeHexi"
+        android:textColor="#333333"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/wantHexi"
+        android:textColor="#6280f9"
+        android:textSize="15sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/contactUs"
+        android:textColor="#6280f9"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/tv_regionShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#6280f9"
+        android:textSize="@dimen/textnormal" />
+    <TextView
+        android:id="@+id/tv_addressShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#6280f9"
+        android:textSize="@dimen/textnormal" />
+    <TextView
+        android:id="@+id/tv_phoneShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#6280f9"
+        android:textSize="@dimen/textnormal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:text="@string/registerOK"
+            android:gravity="center"
+            android:padding="10dp"
+            android:id="@+id/bt_registerOK"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffffff"
+            android:background="@drawable/send_power"
+            />
+    </RelativeLayout>
+</LinearLayout>

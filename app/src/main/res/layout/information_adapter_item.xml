@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    >
+     <ImageView
+         android:id="@+id/iv_officer_item"
+         android:layout_width="40dp"
+         android:layout_height="40dp"
+         android:layout_marginTop="5dp"
+         android:layout_marginBottom="5dp"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+         android:layout_centerVertical="true"
+         android:src="@drawable/default_pic"
+         android:contentDescription="@null"/>
+    <TextView
+        android:id="@+id/tv_officer_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/iv_officer_item"
+        android:text="孙红雷"
+        android:textColor="#646464"
+        android:textSize="@dimen/textlargernormal" />
+
+    <TextView
+        android:id="@+id/tv_officer_type_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lskjdlfs"
+        android:layout_below="@id/tv_officer_item"
+        android:layout_toEndOf="@id/iv_officer_item"
+        android:textColor="#999999"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginEnd="@dimen/normalmargin"
+        android:textSize="14sp" />
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_below="@id/iv_officer_item"
+         android:background="@color/inputLineaColor"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"/>
+</RelativeLayout>

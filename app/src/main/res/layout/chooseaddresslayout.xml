@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <include layout="@layout/titlebar_top_layout"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:layout_marginTop="@dimen/largermargin"
+        android:layout_marginStart="@dimen/largermargin"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/textlargernormal"
+        android:textColor="@color/textBlue"/>
+    <View
+        style="@style/ViewLineH" />
+    <GridView
+        android:id="@+id/gv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/normalmargin"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:scrollbars="none"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otherAddress"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/largermargin"
+        android:layout_marginStart="@dimen/largermargin"
+        android:textSize="@dimen/textlargernormal"
+        android:textColor="@color/textBlue"/>
+    <View
+        style="@style/ViewLineH" />
+    <GridView
+        android:id="@+id/gv_other_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/normalmargin"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:scrollbars="none"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:text="@string/next"
+            android:gravity="center"
+            android:padding="10dp"
+            android:id="@+id/bt_address_next"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffffff"
+            android:background="@drawable/send_gray"
+            />
+    </RelativeLayout>
+</LinearLayout>

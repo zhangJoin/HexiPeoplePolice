@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_bg2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="@drawable/mode_twosidebg" />
+
+            <TextView
+                android:id="@+id/topleftTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="3"
+                android:text="skljfdlsjfllsdjfkla"
+                android:textColor="#999999"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/topRightTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="2.5"
+                android:singleLine="true"
+                android:paddingRight="5dp"
+                android:text="ksjdflk" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/middleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="5dp"
+            android:text="ksdjflsj"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/bottomLeftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="18dp"
+            android:textColor="#999999"
+            android:lineSpacingExtra="5dp"
+            android:text="sdjfklkkkkkkkkkkkkkkkkk"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/bottomRightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="18dp"
+            android:paddingRight="15dp"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:text="sdjlkjsl"
+            android:lineSpacingExtra="5dp"
+            android:layout_marginBottom="5dp"
+            />
+    </LinearLayout>
+</LinearLayout>

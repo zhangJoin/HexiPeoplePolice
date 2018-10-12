@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_topcontainer"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/titlebarBackView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="@dimen/normalmargin"
+        android:paddingEnd="@dimen/largermargin"
+        android:paddingBottom="@dimen/normalmargin"
+        android:layout_marginStart="5dp"
+        android:contentDescription="@null"
+        android:src="@drawable/back"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/titlebarRightTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/titlebarRightIV"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="5dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"/>
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/titlebarTitleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <!--</LinearLayout>-->
+    <TextView
+        android:id="@+id/titlebarLineView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#eaeaea" />
+
+</RelativeLayout>

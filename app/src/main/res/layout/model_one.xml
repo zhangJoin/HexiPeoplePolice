@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="标题是可敬的垃圾"
+        android:paddingTop="5dp"
+        android:paddingLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/ModeloneTitle"
+        android:lineSpacingExtra="5dp"
+        android:textColor="#333333"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:id="@+id/ModeloneImageview"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomLeftText"
+            android:textSize="14sp"
+            android:text="lskjdlfs"
+            android:paddingLeft="13dp"
+            android:textColor="#999999"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomRightText"
+            android:textSize="14sp"
+            android:text="lskjdlfs"
+            android:paddingLeft="13dp"
+            android:textColor="#999999"
+            android:layout_marginRight="13dp"
+            />
+    </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:background="#eaeaea"
+    android:layout_marginTop="5dp"
+    />
+</LinearLayout>

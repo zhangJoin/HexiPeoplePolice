@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+android {
+    signingConfigs {
+        config {
+            config {
+                keyAlias 'key0'
+                keyPassword 'esint01!'
+                storeFile file('hxll.jks')
+                storePassword 'esint01!'
+            }
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.esint.pahx.police"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 211
+        versionName "2.1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        multiDexEnabled true
+//        ndk {
+//            // 设置支持的SO库架构
+//            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+
+    }
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':eallnetwork')
+    implementation files('libs/universal-image-loader-1.9.1.jar')
+    implementation 'com.jakewharton:butterknife:5.1.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    implementation files('libs/glide-3.6.1.jar')
+    implementation project(':myindicator')
+    implementation project(':pulltorefresh')
+    implementation project(':indexlib')
+    implementation files('libs/Amap_2DMap_V5.2.0_20170627.jar')
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation files('libs/AMap_Location_V4.0.1_20180426.jar')
+    implementation files('libs/SDKWrapper-2018.0201.1609.jar')
+    implementation 'com.github.yuzhiqiang1993:zxing:2.1.6'
+    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
+    implementation files('libs/AMap_Search_V6.1.0_20180330.jar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.16'
+    implementation files('libs/TCardApi.jar')
+    compile 'com.android.support:multidex:1.0.0'
+    implementation files('libs/ShareSDK-Core-3.2.0.jar')
+    implementation files('libs/ShareSDK-QQ-3.2.0.jar')
+    implementation files('libs/ShareSDK-Wechat-3.2.0.jar')
+    implementation files('libs/ShareSDK-Wechat-Core-3.2.0.jar')
+    implementation files('libs/ShareSDK-Wechat-Moments-3.2.0.jar')
+    implementation files('libs/MobTools-2018.0523.1923.jar')
+    implementation files('libs/MobCommons-2018.0523.1925.jar')
+    implementation files('libs/lame.jar')
+    compile 'com.bm.photoview:library:1.4.1'
+    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+}
