@@ -74,7 +74,7 @@ public class PowerSourceActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        initTitlebar("力量源", "", "");
+        initTitlebar("社区关怀", "", "");
         emptyView= LayoutInflater.from(PowerSourceActivity.this).inflate(R.layout.emptydata_layout,null);
         rightImageView.setImageResource(R.drawable.peoplepower);
         powerLV = findViewById(R.id.peoplePowerLV);
@@ -161,7 +161,7 @@ public class PowerSourceActivity extends BaseActivity {
                     strUserType = resultObject.optString("strUserType");
                     strUnityGuid = resultObject.optString("strUnityGuid");
                     clickEntity = JSON.parseObject(resultObject.optString("strClick"), ClickEntity.class);
-
+                    titleTextView.setText(resultObject.optString("strUnityName"));
                     if (strUserType.equals(MANAGER)||strUserType.equals(GROUP_OWNER)) {
                         publishTV.setVisibility(View.VISIBLE);
                     } else {
