@@ -1,315 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
     android:fitsSystemWindows="true"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:background="#ffffff"
-    android:id="@+id/showUserinforLL"
-    >
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_weight="1"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="20dp"
-    android:paddingLeft="20dp"
-    android:layout_marginBottom="10dp"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="#333333"
-        android:id="@+id/userNameTV"
-        android:singleLine="true"
-        android:ellipsize="end"
-        android:layout_marginRight="15dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="物建民警"
-        android:layout_marginTop="14dp"
-        android:textColor="#999999"
-        android:textSize="12sp"
-        />
-    <View
-        android:layout_width="150dp"
-        android:layout_height="1px"
-        android:background="#eaeaea"
-        android:layout_marginTop="10dp"
-        />
-</LinearLayout>
+    android:orientation="vertical">
 
-    <com.xiante.jingwu.qingbao.CustomView.CommonView.CircularImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/meAvatarIV"
-        />
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/showUserinforLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="物建民警"
+                android:textColor="#999999"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="150dp"
+                android:layout_height="1px"
+                android:layout_marginTop="10dp"
+                android:background="#eaeaea" />
+        </LinearLayout>
+
+        <com.xiante.jingwu.qingbao.CustomView.CommonView.CircularImageView
+            android:id="@+id/meAvatarIV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:paddingBottom="10dp"
-        >
+        android:paddingBottom="10dp">
+
         <LinearLayout
+            android:id="@+id/showUserScoreLL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="20dp"
             android:layout_weight="1"
-            android:id="@+id/showUserScoreLL"
-            >
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="信息员列表"
                 android:textColor="#333333"
-                android:textSize="14dp"
-                />
-             <LinearLayout
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="horizontal"
-                 android:layout_marginTop="10dp"
-                 >
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="累计为平安河西贡献了  "
-                     android:textSize="12sp"
-                     />
-                 <TextView
-                     android:id="@+id/powerCountTV"
-                     android:textSize="13sp"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:drawableLeft="@drawable/contributebg"
-                     android:textColor="@color/colorPrimary"
-                     />
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="  名信息员！"
-                     android:textSize="12sp"
-                     />
-             </LinearLayout>
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="累计为平安河西贡献了  "
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/powerCountTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/contributebg"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  名信息员！"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/showUserReportLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
         android:layout_marginTop="15dp"
-        android:paddingTop="15dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
         android:paddingBottom="15dp"
         android:paddingLeft="15dp"
-        android:orientation="horizontal"
-        android:id="@+id/showUserReportLL"
-        >
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/my_reportbg"
-            />
+            android:background="@drawable/my_reportbg" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="审核记录"
             android:layout_marginLeft="15dp"
-            android:textSize="14dp"
+            android:text="审核记录"
             android:textColor="#333333"
-            />
+            android:textSize="14dp" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="1px"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:orientation="horizontal"
         android:id="@+id/showUserTaskLL"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/my_task"
-            />
+            android:background="@drawable/my_task" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:text="任务记录"
-            android:layout_weight="1"
-            android:layout_marginLeft="15dp"
-            android:textSize="14dp"
             android:textColor="#333333"
-            />
+            android:textSize="14dp" />
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:orientation="horizontal"
         android:id="@+id/showUserSecurityLL"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/my_security"
-            />
+            android:background="@drawable/my_security" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:text="安全在身边"
-            android:layout_weight="1"
-            android:layout_marginLeft="15dp"
-            android:textSize="14dp"
             android:textColor="#333333"
-            />
+            android:textSize="14dp" />
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/ArtiNaviLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:paddingTop="15dp"
+        android:orientation="horizontal"
         android:paddingBottom="15dp"
         android:paddingLeft="15dp"
-        android:orientation="horizontal"
+        android:paddingTop="15dp">
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/zhihuidaohang" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="智慧导航"
+            android:textColor="#333333"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/dir_rightbg" />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/showUserContactLL"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/my_contact"
-            />
+            android:background="@drawable/my_contact" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:text="常用电话"
-            android:layout_weight="1"
-            android:layout_marginLeft="15dp"
-            android:textSize="14dp"
             android:textColor="#333333"
-            />
+            android:textSize="14dp" />
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:orientation="horizontal"
         android:id="@+id/showMyPowerLL"
-        >
-        <View
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/my_power"
-            />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="社区关怀"
-            android:layout_weight="1"
-            android:layout_marginLeft="15dp"
-            android:textSize="14dp"
-            android:textColor="#333333"
-            />
-        <View
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            />
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:paddingTop="15dp"
+        android:orientation="horizontal"
         android:paddingBottom="15dp"
         android:paddingLeft="15dp"
-        android:orientation="horizontal"
-        android:id="@+id/showUserModifyLL"
-        >
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/setting"
-            />
+            android:background="@drawable/my_power" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="账号信息"
-            android:layout_weight="1"
             android:layout_marginLeft="15dp"
-            android:textSize="14dp"
+            android:layout_weight="1"
+            android:text="社区关怀"
             android:textColor="#333333"
-            />
+            android:textSize="14dp" />
+
         <View
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/dir_rightbg"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            />
+            android:background="@drawable/dir_rightbg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/showUserModifyLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp">
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/setting" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="账号信息"
+            android:textColor="#333333"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/dir_rightbg" />
     </LinearLayout>
 </LinearLayout>

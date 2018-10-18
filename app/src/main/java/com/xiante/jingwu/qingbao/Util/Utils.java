@@ -35,6 +35,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import com.amap.api.navi.AmapNaviPage;
+import com.amap.api.navi.AmapNaviParams;
+import com.amap.api.navi.INaviInfoCallback;
+import com.amap.api.navi.model.AMapNaviLocation;
 public class Utils {
     private static String TAG = Utils.class.getSimpleName();
 
@@ -304,8 +308,6 @@ public class Utils {
     /**
      * 计算两点之间距离
      *
-     * @param start
-     * @param end
      * @return 米
      */
     public static double getDistance(double startlat, double startLongitude, double endlat, double endlong) {
@@ -352,5 +354,81 @@ public class Utils {
         };
         editText.setFilters(new InputFilter[]{filter});
     }
+    /**
+     * 导航跳转
+     *
+     */
+    public static void gonavi(Context context) {
+        AmapNaviPage.getInstance().showRouteActivity(context, new AmapNaviParams(null), new INaviInfoCallback() {
+            @Override
+            public void onInitNaviFailure() {
 
+            }
+
+            @Override
+            public void onGetNavigationText(String s) {
+
+            }
+
+            @Override
+            public void onLocationChange(AMapNaviLocation aMapNaviLocation) {
+
+            }
+
+            @Override
+            public void onArriveDestination(boolean b) {
+
+            }
+
+            @Override
+            public void onStartNavi(int i) {
+
+            }
+
+            @Override
+            public void onCalculateRouteSuccess(int[] ints) {
+
+            }
+
+            @Override
+            public void onCalculateRouteFailure(int i) {
+
+            }
+
+            @Override
+            public void onStopSpeaking() {
+
+            }
+
+            @Override
+            public void onReCalculateRoute(int i) {
+
+            }
+
+            @Override
+            public void onExitPage(int i) {
+
+            }
+
+            @Override
+            public void onStrategyChanged(int i) {
+
+            }
+
+            @Override
+            public View getCustomNaviBottomView() {
+                return null;
+            }
+
+            @Override
+            public View getCustomNaviView() {
+                return null;
+            }
+
+            @Override
+            public void onArrivedWayPoint(int i) {
+
+            }
+        });
+    }
 }

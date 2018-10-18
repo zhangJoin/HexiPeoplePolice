@@ -256,6 +256,9 @@
             android:theme="@style/TranslucentTheme"
             android:screenOrientation="portrait"
             />
+        <activity android:name="com.amap.api.navi.AmapRouteActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

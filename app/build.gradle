@@ -78,6 +78,9 @@ dependencies {
     implementation files('libs/MobCommons-2018.0523.1925.jar')
     implementation files('libs/lame.jar')
     compile 'com.bm.photoview:library:1.4.1'
-    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
-    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation files('libs/AMap3DMap_6.4.0_AMapNavi_6.2.0_20180814.jar')
 }

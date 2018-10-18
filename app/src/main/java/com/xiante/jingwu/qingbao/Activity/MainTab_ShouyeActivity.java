@@ -29,6 +29,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 import com.xiante.jingwu.qingbao.Adapter.FragmentAdapter;
 import com.xiante.jingwu.qingbao.Bean.Common.ClickEntity;
 import com.xiante.jingwu.qingbao.Bean.Common.ReportTypeEntity;
+import com.xiante.jingwu.qingbao.Bean.Common.UserEntity;
 import com.xiante.jingwu.qingbao.CustomView.CommonView.AtMostViewPager;
 import com.xiante.jingwu.qingbao.CustomView.CommonView.ImageTextButton;
 import com.xiante.jingwu.qingbao.Dialog.DownLoadDialog;
@@ -82,6 +83,8 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
     boolean isSuccess;
     DownLoadDialog mDownLoadDialog;
     private String isUpdate;
+    private LinearLayout llNavigation,llUnit,llTmc;
+    private UserEntity userEntity;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +112,9 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
         unReadMsgView = findViewById(R.id.unReadMsgView);
         msgiv = findViewById(R.id.msgiv);
         mScanIV = findViewById(R.id.scanIV);
+        llNavigation=findViewById(R.id.ll_navigation);
+        llUnit=findViewById(R.id.ll_unit);
+        llTmc=findViewById(R.id.ll_tmc);
         loaddingDialog = new LoaddingDialog(this);
     }
 
@@ -122,10 +128,10 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
         scrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ScrollView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ScrollView> refreshView) {
-                   scrollView.onRefreshComplete();
-                   if(newsfragmengList.size()>0){
-                       newsfragmengList.get(currentNewsIndex).refreshData();
-                   }
+                scrollView.onRefreshComplete();
+                if(newsfragmengList.size()>0){
+                    newsfragmengList.get(currentNewsIndex).refreshData();
+                }
 
             }
 
@@ -200,6 +206,24 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
                         }).start();
             }
         });
+        llNavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.gonavi(MainTab_ShouyeActivity.this);
+            }
+        });
+        llTmc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainTab_ShouyeActivity.this,"即将上线",Toast.LENGTH_SHORT).show();
+            }
+        });
+        llUnit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getNetData();
+            }
+        });
     }
 
     private void initCurrentDay() {
@@ -239,7 +263,46 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
         builder.append(" ").append(week);
         currentDayTV.setText(builder.toString());
     }
+    //查看是否加入社区关怀
+    private void getNetData() {
+        isSuccess = Utils.isSuccess(MainTab_ShouyeActivity.this);
+        if (!isSuccess) {
+            Toast.makeText(MainTab_ShouyeActivity.this, getString(R.string.netError), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        loaddingDialog.showDialog();
+        NetworkFactory networkFactory = OkhttpFactory.getInstance();
+        SuccessfulCallback successfulCallback = new SuccessfulCallback() {
+            @Override
+            public void success(String str) throws JSONException {
+                loaddingDialog.dismissAniDialog();
+                if (new CodeExceptionUtil(MainTab_ShouyeActivity.this).dealException(str)) {
+                    userEntity = JSON.parseObject(new JSONObject(str).optString("resultData"), UserEntity.class);
+                    if (userEntity!=null&&!IsNullOrEmpty.isEmpty(userEntity.getStrUnityGuid())) {
+                        Intent intent = new Intent(MainTab_ShouyeActivity.this, PowerSourceActivity.class);
+                        intent.putExtra("strUnityGuid",userEntity.getStrUnityGuid());
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainTab_ShouyeActivity.this, "您还未加入社区关怀", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
 
+            @Override
+            public void success(InputStream ism, long conentLength) {
+
+            }
+        };
+        FailCallback failCallback = new FailCallback() {
+            @Override
+            public void fail(String str) {
+                loaddingDialog.dismissAniDialog();
+            }
+        };
+
+        UrlManager urlManager = new UrlManager(this);
+        networkFactory.start(NetworkFactory.METHOD_GET, urlManager.getUserInformation(), null, successfulCallback, failCallback);
+    }
     public void getMainData() {
         isSuccess = Utils.isSuccess(MainTab_ShouyeActivity.this);
         if (!isSuccess) {
@@ -256,7 +319,7 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
                     JSONObject resultObject = rootObject.optJSONObject("resultData");
                     JSONObject statiscObject = resultObject.optJSONObject("statistic");
                     updateStatistic(statiscObject);
-                 //   updateReportTypeContainer(resultObject.optString("infoType"));
+                    //   updateReportTypeContainer(resultObject.optString("infoType"));
                     updateNewspart(resultObject.optJSONObject("newsType"));
 
                 }
@@ -267,7 +330,7 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
                             @Override
                             public void onAction(List<String> permissions) {
                                 if ("1".equals(isUpdate))
-                                mDownLoadDialog = new DownLoadDialog(MainTab_ShouyeActivity.this);
+                                    mDownLoadDialog = new DownLoadDialog(MainTab_ShouyeActivity.this);
                                 mDownLoadDialog.setCanceledOnTouchOutside(false);
                                 mDownLoadDialog.show();
                             }
@@ -489,7 +552,7 @@ public class MainTab_ShouyeActivity extends FragmentActivity {
                 commitAddPowerPerson(scanStr);
             }
         }else if(requestCode == DownLoadDialog.INSTALL_REQUEST_CODE&&resultCode==RESULT_OK ){
-          mDownLoadDialog.requestInstall();
+            mDownLoadDialog.requestInstall();
         }
     }
 

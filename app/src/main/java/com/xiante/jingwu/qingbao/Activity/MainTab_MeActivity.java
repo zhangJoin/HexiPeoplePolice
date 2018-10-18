@@ -33,13 +33,14 @@ import java.io.InputStream;
 
 /**
  * Created by zhong on 2018/4/28.
+ *
  */
 
 public class MainTab_MeActivity extends BaseActivity {
     TextView userNameTV, powerCountTV;
     CircularImageView meAvatarIV;
     LinearLayout showUserinforLL, showUserScoreLL, showUserReportLL, showUserTaskLL,
-            showUserSecurityLL, showUserContactLL, showUserPowerLL, showUserModifyLL;
+            showUserSecurityLL, showUserContactLL, showUserPowerLL, showUserModifyLL,ArtiNaviLL;
     UserEntity userEntity;
     LoaddingDialog loaddingDialog;
     boolean isSuccess;
@@ -69,6 +70,7 @@ public class MainTab_MeActivity extends BaseActivity {
         showUserModifyLL = findViewById(R.id.showUserModifyLL);
         loaddingDialog = new LoaddingDialog(this);
         loaddingDialog.setCancelable(false);
+        ArtiNaviLL=findViewById(R.id.ArtiNaviLL);
     }
 
     @Override
@@ -133,7 +135,12 @@ public class MainTab_MeActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-
+        ArtiNaviLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.gonavi(MainTab_MeActivity.this);
+            }
+        });
         showUserPowerLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +149,7 @@ public class MainTab_MeActivity extends BaseActivity {
                     intent.putExtra("strUnityGuid",userEntity.getStrUnityGuid());
                     startActivity(intent);
                 } else {
-                    Toast.makeText(MainTab_MeActivity.this, "您还未加入力量源", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainTab_MeActivity.this, "您还未加入社区关怀", Toast.LENGTH_SHORT).show();
                 }
 
             }

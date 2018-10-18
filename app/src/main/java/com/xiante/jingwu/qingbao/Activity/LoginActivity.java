@@ -245,8 +245,9 @@ public class LoginActivity extends BaseActivity {
                 if (new CodeExceptionUtil(LoginActivity.this).dealException(str)) {
                     JSONObject jsonObject = new JSONObject(str);
                     JSONObject resultObject = jsonObject.optJSONObject("resultData");
-                    String data_url = resultObject.optString("dataServer");
+//                    String data_url = resultObject.optString("dataServer");
                     String file_url = resultObject.optString("fileServer");
+                    String data_url="http://gzh.weijingyuan.com.cn/JinMen/";
                     getSharedPreferences(Global.MAIN_URL, MODE_PRIVATE).edit().putString(Global.MAIN_URL, data_url).commit();
                     getSharedPreferences(Global.FILE_Server_URL, MODE_PRIVATE).edit().putString(Global.FILE_Server_URL, file_url).commit();
                     login();
